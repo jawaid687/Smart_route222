@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Outfit', 'Noto Sans Bengali', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0d1322;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Subtle glow effects */
+.glow-emerald {
+  filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.65));
+}
+.glow-danger {
+  filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.75));
+}
+.glow-blue {
+  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.65));
+}
+.glow-amber {
+  filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.65));
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(13, 19, 34, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-glow {
+  background: rgba(19, 27, 46, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Route SVG flow pulse */
+@keyframes routePulse {
+  0% {
+    stroke-dashoffset: 40;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.route-active-line {
+  stroke-dasharray: 8 6;
+  animation: routePulse 1.2s linear infinite;
+}
+
+/* Node pulse radar */
+@keyframes radarPing {
+  0% {
+    r: 18;
+    opacity: 0.8;
+  }
+  100% {
+    r: 34;
+    opacity: 0;
+  }
+}
+
+.radar-wave {
+  animation: radarPing 2s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
+}
